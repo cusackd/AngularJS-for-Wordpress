@@ -10,8 +10,6 @@ articlesFactory.factory('articlesFactory', ['$resource', function($resource){
     };
 
     articlesFactory.getArticlesSingle = function(postID){
-
-    	console.log(postID);
         return $resource(baseUrl + 'posts/' + postID).get();
     };
 

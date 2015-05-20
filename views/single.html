@@ -1,8 +1,23 @@
 <article>
 	<img style="width: 100%;" src="{{ article.featured_image.source }}">
     <h1>{{ article.title }}</h1>
+    
     <section ng-bind-html='toTrustedHTML( article.content )'></section>
-    <div>{{ locationURL }}</div>
+
+    <section style="margin-bottom: 10px;">
+        <p style="display: inline;">Categories:</p>
+        <ul class="list-inline" style="display: inline;">
+            <li ng-repeat="cat in article.terms.category">{{ cat.name }}</li>
+        </ul>
+    </section>
+
+    <section>
+        <h4>Tags</h4>
+        <ul class="list-inline">
+            <li ng-repeat="tag in article.terms.post_tag">{{ tag.name }}</li>
+        </ul>
+    </section>
+    
 
     <!-- Twitter -->
     <a href="http://twitter.com/share?url={{ locationURL }}&text={{ article.title }}" target="_blank" class="share-btn twitter">

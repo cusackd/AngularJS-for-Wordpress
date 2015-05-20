@@ -1,6 +1,6 @@
 var blogControllers = angular.module('blogControllers', []);
 
-blogControllers.controller('ListCtrl', ['$scope', '$resource', 'articlesFactory', function($scope, $resource, articlesFactory){
+blogControllers.controller('ListCtrl', ['$scope', '$resource', '$location', '$sce', 'articlesFactory', function($scope, $resource, $location, $sce, articlesFactory){
 
     articlesFactory.getArticlesList().$promise.then(function(data){
     	console.log('Articles Stuff');
@@ -10,6 +10,12 @@ blogControllers.controller('ListCtrl', ['$scope', '$resource', 'articlesFactory'
     		console.log('Error');
 		}
     );
+
+    $scope.toTrustedHTML = function( html ){
+        return $sce.trustAsHtml( html );
+    };
+    
+    $scope.locationURL = encodeURIComponent($location.host());
 
 }]);
 
