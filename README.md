@@ -10,5 +10,5 @@ This is a new project and does not have all features added yet, I should be maki
 
 Requirements
 -------
-*Wordpress
-*WP REST API (http://wp-api.org/)
+* Wordpress
+* WP REST API (http://wp-api.org/)
