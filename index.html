@@ -1,58 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
+<html  ng-app="angular-test">
+    <head>
+        <meta charset="utf-8">
+        <title>Angular Test App</title>
 
-<html lang="en" ng-app="blogApp">
-<head>
-    <meta charset="utf-8">
+        <script src="node_modules/angular/angular.js" charset="utf-8"></script>
+        <script src="node_modules/angular-route/angular-route.js" charset="utf-8"></script>
+        <script src="node_modules/angular-resource/angular-resource.js" charset="utf-8"></script>
 
-    <title>Blog</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
+        <!-- Start the app -->
+        <script src="app/app.js" charset="utf-8"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    
-    <link rel="stylesheet" href="assets/custom.css">
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-</head>
+        <!-- Directives -->
+        <script src="app/directives/article/article.directive.js" charset="utf-8"></script>
+        <script src="app/directives/article/article.factory.js" charset="utf-8"></script>
 
-<body role="document">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Blog</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#/">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-     
-    <div class="container theme-showcase" role="main" style="margin-top: 100px;">
-        <div class="mainView" ng-view></div>   
-    </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-resource.min.js"></script>
-
-    <script src="controllers/blogControllers.js"></script>
-    <script src="factories/articlesFactory.js"></script>
-    <script src="app.js"></script>
-</body>
+        <!-- Pages -->
+        <script src="app/pages/home/home.controller.js" charset="utf-8"></script>
+        <script src="app/pages/article/article-page.controller.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div ng-view></div>
+    </body>
 </html>
