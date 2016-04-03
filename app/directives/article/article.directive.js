@@ -1,6 +1,6 @@
 angular.module('app.article', ['ngResource'])
 
-.directive('article', ['articleFactory', '$sce', function(articleFactory){
+.directive('article', ['articleFactory', function(articleFactory){
 
     return{
         restrict : 'E',
